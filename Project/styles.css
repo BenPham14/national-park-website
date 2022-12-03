@@ -1,0 +1,398 @@
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+background-image: url(images/desert-sand.jpg);
+background-size: 100% 100vh;
+line-height: 1.5;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* ------------------------------- Header —-------------------------- */
+header {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+padding: 25px 5%;
+/* background-color: beige; */
+/* background-color: #eafbea; */
+}
+header a {
+color: black;
+text-decoration: none;
+}
+header p {
+margin-right: auto;
+font-family: fantasy;
+font-weight: bold;
+font-size: x-large;
+color: orange;
+}
+.nav_buttons {
+list-style: none;
+}
+.nav_buttons li {
+display: inline-block;
+padding: 0px 15px;
+font-size: large;
+}
+.nav_buttons a:hover {
+color: orangered;
+}
+.selected {
+color: orange;
+/* color: green; */
+/* background-color: rgb(100, 160, 100); */
+border: none;
+border-radius: 20px;
+}
+/*--------------------------------- Home Page ----------------------------------*/
+.dashed {
+margin-top: 20px;
+margin-bottom: 5px;
+border-top: 3px dashed black;
+}
+.home-page img {
+max-width: 100%;
+display: block;
+border-radius: 5px;
+}
+.home-page iframe {
+border-radius: 5px;
+}
+.home-page input[type = "text"], textarea, select {
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+background-color:white;
+color: gray;
+width: 100%;
+margin: auto;
+margin-bottom: 10px;
+padding: 10px;
+box-sizing: border-box;
+font-size: 15px;
+border: none;
+border-radius: 5px;
+}
+.home-page input[type = "reset"] {
+background-color: orangered;
+text-transform: uppercase;
+width: 100%;
+padding: 12px;
+color: white;
+font-size: medium;
+cursor: pointer;
+margin-top: 10px;
+border: none;
+border-radius: 5px;
+}
+.home-page input[type = "submit"]{
+text-transform: uppercase;
+background-color: orange;
+width: 100%;
+padding: 12px;
+color: white;
+font-size: medium;
+cursor: pointer;
+margin-top: 10px;
+border: none;
+border-radius: 5px;
+}
+.home-page ::placeholder {
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* Set core body defaults */
+.flow > *:where(:not(:first-child)) {
+margin-top: 1em;
+}
+/* grid components */
+.home-page {
+padding: 2rem;
+border-radius: 0.5rem;
+}
+.home-page-grid {
+display: grid;
+gap: 1.5rem;
+grid-template-columns: repeat(3, 1fr);
+padding-block: 2rem;
+width: 95%;
+margin-inline: auto;
+}
+.grid-span-2 {
+grid-row: span 2;
+grid-column: span 2;
+}
+/* home grid colors */
+.bg-info-grid {
+background-color: rgba(255, 255, 255, 0.7);
+}
+.bg-map-grid {
+background-color: rgba(255, 255, 255, 0.7);
+}
+.bg-feedback-grid {
+background-color: rgba(255, 255, 255, 0.7);
+}
+/* adaptive grid image */
+@media (max-width: 65em) {
+.home-page-grid {
+  grid-template-columns: repeat(1,1fr);
+}
+.grid-span-2 {
+grid-column: span 1;
+}
+}
+/* collaspbiles */
+.collapsible {
+background-color: lightcoral;
+color: white;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: none;
+text-align: left;
+outline: none;
+font-size: 15px;
+border-radius: 5px;
+}
+.active, .collapsible:hover {
+background-color: orange;
+}
+.content {
+padding: 18px;
+display: none;
+overflow: hidden;
+background-color: rgba(255, 255, 255, 0);
+}
+/* more info */
+.more-info .col-50 {
+float: left;
+width: 50%;
+margin-top: 6px;
+}
+.more-info .tickets, .col-50{
+padding-right: 5pt;
+}
+.more-info a {
+text-decoration: none;
+color: black;
+}
+/* feedback page style */
+.col-25 {
+float: left;
+width: 40%;
+margin-top: 6px;
+}
+.col-75 {
+float: left;
+width: 60%;
+margin-top: 2px;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+/* ------------------------------- Tickets Page -------------------------------- */
+.tickets-page table {
+/* border-collapse: collapse; */
+/* border-spacing: 0; */
+width: 100%;
+border: none;
+background-color: white;
+border-radius: 5px;
+margin-bottom: 1.5rem;
+}
+.tickets-page th, td {
+text-align: left;
+padding: 16px;
+}
+.tickets-page tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+/* Payment Page */
+.tickets-page{
+/* font-family: Arial; */
+font-size: 17px;
+/* padding: 8px; */
+width: 95%;
+margin-inline: auto;
+padding-block: 2rem;
+}
+.tickets-page .row {
+display: -ms-flexbox; /* IE10 */
+display: flex;
+-ms-flex-wrap: wrap; /* IE10 */
+flex-wrap: wrap;
+margin: 0 -16px;
+}
+.tickets-page .col-25 {
+-ms-flex: 25%; /* IE10 */
+flex: 25%;
+}
+.tickets-page .col-50 {
+-ms-flex: 50%; /* IE10 */
+flex: 50%;
+}
+.tickets-page .col-75 {
+-ms-flex: 75%; /* IE10 */
+flex: 75%;
+}
+.tickets-page .col-25,
+.tickets-page .col-50,
+.tickets-page .col-75 {
+padding: 0 16px;
+}
+.tickets-page .container {
+background-color: #f2f2f2;
+padding: 5px 20px 15px 20px;
+border: 1px solid lightgrey;
+border-radius: 5px;
+/* width: 95%;
+margin-inline: auto; */
+}
+.tickets-page input[type=text] {
+width: 100%;
+margin-bottom: 20px;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+ 
+.tickets-page input[type=tel] {
+width: 100%;
+margin-bottom: 20px;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.tickets-page input[type=email] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  }
+ 
+ 
+ 
+.tickets-page label {
+margin-bottom: 10px;
+display: block;
+}
+.tickets-page .icon-container {
+margin-bottom: 20px;
+padding: 7px 0;
+font-size: 24px;
+}
+.tickets-page .button {
+background-color: #04AA6D;
+color: white;
+padding: 12px;
+margin: 10px 0;
+border: none;
+width: 100%;
+border-radius: 3px;
+cursor: pointer;
+font-size: 17px;
+}
+.tickets-page .btn:hover {
+background-color: #45a049;
+}
+.tickets-page .container a{
+color: #2196F3;
+}
+.tickets-page hr {
+border: 1px solid lightgrey;
+}
+.tickets-page span.price {
+float: right;
+color: grey;
+}
+.tickets-page .ticket-1 input[type=number], .ticket-2 input[type=number], .ticket-3 input[type=number]{
+width: 10%;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+@media (max-width: 800px) {
+.tickets-page .row {
+flex-direction: column-reverse;
+}
+.tickets-page .col-25 {
+margin-bottom: 20px;
+}
+}
+ 
+/* payment confirmation page */
+ 
+/* ------------------------------- Events Page -------------------------------- */
+#celendar{
+float: left;
+margin-right: 25px;
+border-radius: 5px;
+}
+ 
+.event-page img {
+ border-radius: 5px;
+}
+ 
+.event-page {
+width: 95%;
+margin-inline: auto;
+padding-block: 2rem;
+background-color: rgba(255, 255, 255, 0.7);
+border-radius: 5px;
+margin-bottom: 1.5rem;
+margin-top: 1.5rem;
+padding: 20px;
+}
+#decriptions{
+ text-align:right;
+ padding-left:70%
+}
+/* ------------------------------- Contacts Page -------------------------------- */
+.contacts-page {
+width: 95%;
+margin-inline: auto;
+padding-block: 2rem;
+}
+.contacts-page input[type=text],
+.contacts-page input[type=email],
+.contacts-page select,
+.contacts-page textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical
+}
+.contacts-page input[type=submit] {
+background-color: #04AA6D;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.contacts-page input[type=submit]:hover {
+background-color: #45a049;
+}
+.contacts-page .container {
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+.tycontact{
+ text-align:center;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+

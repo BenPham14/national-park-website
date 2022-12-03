@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+      <p>Redstone National Park</p>
+      <nav>
+          <ul class="nav_buttons">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="#" class="selected">Tickets</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contacts.html">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+        <!-------- Tickets top description ----------------->
+  <main class="tickets-page">
+      <table>
+          <tr>
+          <th>Age Range</th>
+          <th>Ticket Option</th>
+          <th>Price</th>
+          </tr>
+          <tr>
+          <td>18 Under</td>
+          <td>Kids Ticket</td>
+          <td>$3</td>
+          </tr>
+          <tr>
+          <td>18 to 65</td>
+          <td>Adult Ticket</td>
+          <td>$7</td>
+          </tr>
+          <tr>
+          <td>65+ (Senior)</td>
+          <td>Elder Ticket</td>
+          <td>$4</td>
+          </tr>
+      </table>
+         <!-------- Billing address ----------------->
+      <div class="row">
+          <div class="col-75">
+          <div class="container">
+              <form action="Payment confirmation.html" id="paymentForm">
+       
+              <div class="row">
+                  <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                  <input type="text" id="fname" name="fullName" placeholder="First Last" required>
+                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                  <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Billing Address</label>
+                  <input type="text" id="Billadr" name="Billadr" placeholder="Number, Street, and Apt. or Suite No." required>
+                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <input type="text" id="Billcity" name="Billcity" placeholder="City" required>
+   
+                  <div class="row">
+                      <div class="col-50">
+                      <label for="state">State</label>
+                      <input type="text" id="Billstate" name="Billstate" placeholder="State" required>
+                      </div>
+                      <div class="col-50">
+                      <label for="zip">Zip</label>
+                      <input type="text" id="Billzip" name="Billzip" placeholder="XXXXX" required>
+                      </div>
+                  </div>
+                  </div>
+              <!-------- Payment ----------------->
+                  <div class="col-50">
+                  <h3>Payment</h3>
+                  <label for="fname">Accepted Cards</label>
+                  <div class="icon-container">
+                      <i class="fa fa-cc-visa" style="color:navy;"></i>
+                      <i class="fa fa-cc-amex" style="color:blue;"></i>
+                      <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                      <i class="fa fa-cc-discover" style="color:orange;"></i>
+                  </div>
+                  <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="First Last" required>
+                  <label for="ccnum">Credit card number</label>
+                  <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+                  <label for="expmonth">Exp Month</label>
+                    <select id="expmonth" name="month" required>
+                    <option value="" disabled selected>Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                    </select>
+                  <div class="row">
+                      <div class="col-50">
+                      <label for="expyear">Exp Year</label>
+                      <input type="text" id="expyear" name="expyear" placeholder="20XX" required maxlength = "4">
+                      </div>
+                      <div class="col-50">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" name="cvv" placeholder="XXX" required maxlength = "3" >
+                      </div>
+                  </div>
+                  </div>
+           
+              </div>
+                       <!-------- Checkbox for the shipping same ----------------->
+              <label>
+                  <input type="checkbox" id="checked" onclick="Shippingsame()" name="sameadr"> Shipping address same as billing
+              </label>
+                       <!-------- Shipping address ----------------->
+              <label for="adr" ><i class="fa fa-address-card-o"></i> Shipping Address</label>
+                  <input type="text" id="Shipadr" name="shipAddress"
+                  placeholder="Number, Street, and Apt. or Suite No." required>
+               <label for="city"><i class="fa fa-institution"></i> City</label>
+               <input type="text" id="Shipcity" name="shipCity" placeholder="City" required>
+               <label for="state">State</label>
+               <input type="text" id="Shipstate" name="shipState" placeholder="State" required>
+               <label for="zip">Zip</label>
+               <input type="text" id="Statezip" name="shipZip" placeholder="XXXXX" required>
+                       <!-------- function for the shipping ----------------->
+              <script>
+                   function Shippingsame()
+                   {
+                       var checkBox = document.getElementById("checked");
+                       var textBil = document.getElementById("Billadr");
+                       var textBilcity = document.getElementById("Billcity");
+                       var textBilstate = document.getElementById("Billstate");
+                       var textBilzip = document.getElementById("Billzip");
+                       var textShip = document.getElementById("Shipadr");
+                       var textShipcity = document.getElementById("Shipcity");
+                       var textShipstate = document.getElementById("Shipstate");
+                       var textShipzip = document.getElementById("Statezip");  
+                       if (checkBox.checked == true){
+                           textShip.value=textBil.value;
+                           textShipcity.value=textBilcity.value;
+                           textShipstate.value=textBilstate.value;
+                           textShipzip.value=textBilzip.value;
+                   }            else {
+                           textShip.value="";
+                           textShipcity.value="";
+                           textShipstate.value="";
+                           textShipzip.value="";
+                       }
+                   }
+              </script>
+ 
+              <button type="submit" class = "button" onclick="send()">Continue to checkout</button>
+              </form>
+          </div>
+                   <!-------- price of ticket total ----------------->
+          </div>
+          <div class="col-25">
+              <div class="container">
+                  <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b id="total">0</b></span></h4>
+                  <p class="ticket-1"><a href="#">Kids Ticket</a> <span class="price">$3</span> <input type="number" onchange="findTotal()" name="qty" id="qty1" value="0" min="0"></p>
+                  <p class="ticket-2"><a href="#">Adult Ticket</a> <span class="price">$7</span> <input type="number" onchange="findTotal()" name="qty" id="qty2" value="0" min="0"></p>
+                  <p class="ticket-3"><a href="#">Elder Ticket</a> <span class="price">$4</span> <input type="number" onchange="findTotal()" name="qty" id="qty3" value="0" min="0"></p>
+                  <hr>
+                  <p>Total <span class="price" style="color:black"><b id="quantity">$0</b></span></p>
+                  <script async>
+                          function findTotal() {
+                              var arr = document.getElementsByName('qty');
+                              var tot=0;
+                              var t = 0;
+           
+                              for(var i=0;i<arr.length;i++){
+                                  if(parseInt(arr[i].value))
+                                      tot += parseInt(arr[i].value);
+                              }
+                              document.getElementById('total').innerHTML = tot;
+                              var q1 = parseInt(document.getElementById('qty1').value);
+                              var q2 = parseInt(document.getElementById('qty2').value);
+                              var q3 = parseInt(document.getElementById('qty3').value);
+                              var total = 0;
+                              total = (q1 * 3) + total;
+                              total = (q2 * 7) + total;
+                              total = (q3 * 4) + total;
+                              document.getElementById('quantity').innerHTML = "$" + total;
+                              localStorage.setItem('total', total)
+                          }
+                  </script>
+              </div>
+          </div>
+      </div>
+  </main>
+ 
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+  <script src="tickets.js"></script>
+  <script src="formHandle.js"></script>
+ 
+</body>
+</html>
+ 
+ 
+ 
+ 
+ 
+ 
+
